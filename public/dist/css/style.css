@@ -1,0 +1,50 @@
+.navbar-nav .nav-item.active .nav-link .nav-link-icon,
+.navbar-nav .nav-item.active .nav-link .nav-link-title {
+    color: #206bc4 !important;
+}
+
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+
+/*Parsley Js*/
+.error {
+    color: #d63939;
+}
+
+.parsley-error {
+    border-color: #d63939;
+}
+
+.parsley-errors-list {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    &.filled {
+        display: block;
+    }
+
+    > li {
+        font-size: 12px;
+        list-style: none;
+        color: #d63939;
+        margin-top: 5px;
+    }
+}
