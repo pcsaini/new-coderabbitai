@@ -37,15 +37,15 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         // Attempt to authenticate the user
-        if (!auth()->attempt($credentials, $request->remember)) {
+        if (!auth()->attempt($credentials, $request->get(' remember', false))) {
             // Redirect back with input and error message
-            return redirect()->back()
+            return back()
                 ->withInput($request->only('email', 'remember'))
                 ->withErrors(['auth' => 'Invalid credentials']);
         }
 
         // Redirect to the home page upon successful authentication
-        return redirect()->route('home');
+        return to_route('home');
     }
 
     /**
@@ -85,7 +85,7 @@ class AuthController extends Controller
         auth()->login($user);
 
         // Redirect to the home page
-        return redirect()->route('home');
+        return to_route('home');
     }
 
     /**
@@ -98,6 +98,6 @@ class AuthController extends Controller
     {
         auth()->logout();
         $request->session()->invalidate();
-        return redirect()->route('auth.login');
+        return to_route('auth.login');
     }
 }
