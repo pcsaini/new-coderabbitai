@@ -1,6 +1,6 @@
 name: "Run Tests - Current"
 
-on: [push]
+on: [ push ]
 
 jobs:
   Test:
@@ -22,8 +22,14 @@ jobs:
 
       - name: Prepare Laravel Application
         run: |
-            cp .env.example .env
-            php artisan key:generate
-
+          cp .env.example .env
+          php artisan key:generate
+      - name: Create Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
       - name: Execute tests (Unit and Feature tests) via PHPUnit
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
         run: php artisan test
