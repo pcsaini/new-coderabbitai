@@ -4,7 +4,7 @@
             <div class="container">
                 <ul class="navbar-nav">
                     <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-                        <a class="nav-link" href="#" >
+                        <a class="nav-link" href="{{ route('home') }}" >
                             <span class="nav-link-icon">
                                 <i class="ti ti-home icon"></i>
                             </span>
@@ -13,7 +13,7 @@
                     </li>
 
                     <li class="nav-item {{ request()->routeIs('deposit') ? 'active' : '' }}">
-                        <a class="nav-link" href="#" >
+                        <a class="nav-link" href="{{ route('deposit') }}" >
                             <span class="nav-link-icon">
                                 <i class="ti ti-cloud-upload icon"></i>
                             </span>
@@ -21,8 +21,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item" {{ request()->routeIs('withdraw') ? 'active' : '' }}>
-                        <a class="nav-link" href="#" >
+                    <li class="nav-item {{ request()->routeIs('withdraw') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('withdraw') }}" >
                             <span class="nav-link-icon">
                                 <i class="ti ti-cloud-download icon"></i>
                             </span>
@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="nav-item {{ request()->routeIs('transfer') ? 'active' : '' }}">
-                        <a class="nav-link" href="#" >
+                        <a class="nav-link" href="{{ route('transfer') }}" >
                             <span class="nav-link-icon">
                                 <i class="ti ti-transfer icon"></i>
                             </span>
@@ -40,7 +40,7 @@
                     </li>
 
                     <li class="nav-item {{ request()->routeIs('statement') ? 'active' : '' }}">
-                        <a class="nav-link" href="#" >
+                        <a class="nav-link" href="{{ route('statement') }}" >
                             <span class="nav-link-icon">
                                 <i class="ti ti-file-text icon"></i>
                             </span>

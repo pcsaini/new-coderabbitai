@@ -5,7 +5,7 @@
 @section('content')
     <div class="card card-md">
         <div class="card-body">
-            <h2 class="h2 text-start mb-4">Login to your account</h2>
+            <h2 class="h2 text-start mb-4 text-secondary">Login to your account</h2>
             <form action="{{ route('auth.login.post') }}" method="post" autocomplete="off" novalidate
                   data-parsley-validate>
                 @csrf
@@ -14,16 +14,13 @@
                     <input type="email"
                            name="email"
                            class="form-control"
-                           placeholder="Enter Email"
+                           placeholder="Enter email"
                            autocomplete="off"
                            value="{{ old('email') }}"
                            data-parsley-trigger="focusout"
                            data-parsley-required
                            data-parsley-type-message="Please enter valid email"
                            data-parsley-required-message="Please enter email">
-                    @error('email')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
                 </div>
                 <div class="mb-2">
                     <label class="form-label">
