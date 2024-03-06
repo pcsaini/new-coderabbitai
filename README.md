@@ -9,10 +9,10 @@
 
 ## Introduction
 
-`Small Banking Application` is a Banking Application Assignment, Some Features like deposit, withdraw and transfer amount.
+`Small Banking Application` is a Banking Application Assignment with some Features like deposit, withdraw and transfer amount.
 
 ## Installation & Configuration
-To setup and run project please follow below steps
+To set up and run the project, please follow the below steps
 ```shell
 # Clone the project repo
 git clone https://github.com/pcsaini/small-banking-application.git
@@ -34,8 +34,11 @@ php artisan migrate
 
 # Run the application
 php artisan serve
+
+# Run Test Cases
+php artisan test
 ```
 
-Now you can run the application on the url http://localhost:8000
+Now you can run the application on the URL http://localhost:8000
 
 Note: Please add database configuration in the `.env` file

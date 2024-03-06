@@ -5,7 +5,7 @@
 @section('content')
     <div class="card card-md">
         <div class="card-body">
-            <h2 class="h2 text-start mb-4">Create new account</h2>
+            <h2 class="h2 text-start mb-4 text-secondary">Create new account</h2>
             <form action="{{ route('auth.register.post') }}" method="post" autocomplete="off" novalidate
                   data-parsley-validate>
                 @csrf

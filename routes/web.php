@@ -31,8 +31,16 @@ Route::prefix('auth')->middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
 
-    Route::get('deposit', [PaymentController::class, 'deposit'])->name('deposit.get');
+    Route::view('deposit', 'pages.deposit')->name('deposit');
     Route::post('deposit', [PaymentController::class, 'deposit'])->name('deposit.post');
+
+    Route::view('withdraw', 'pages.withdraw')->name('withdraw');
+    Route::post('withdraw', [PaymentController::class, 'withdraw'])->name('withdraw.post');
+
+    Route::view('transfer', 'pages.transfer')->name('transfer');
+    Route::post('transfer', [PaymentController::class, 'transfer'])->name('transfer.post');
+
+    Route::get('statement', [PaymentController::class, 'statement'])->name('statement');
 
     Route::any('logout', [AuthController::class, 'logout'])->name('auth.logout');
 });

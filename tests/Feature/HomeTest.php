@@ -18,9 +18,6 @@ class HomeTest extends TestCase
         $this->user = User::factory()->create()->first();
     }
 
-    /**
-     * A basic feature test example.
-     */
     public function test_the_base_url_redirect_to_home(): void
     {
         $response = $this->get('/');
@@ -28,9 +25,6 @@ class HomeTest extends TestCase
         $response->assertRedirectToRoute('home');
     }
 
-    /**
-     * A basic feature test example.
-     */
     public function test_the_home_page_redirect_to_login_if_not_logged_in(): void
     {
         $response = $this->get('/home');
