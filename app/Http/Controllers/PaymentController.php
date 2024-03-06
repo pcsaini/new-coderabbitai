@@ -96,6 +96,9 @@ class PaymentController extends Controller
 
         // Get the authenticated user
         $user = $request->user();
+        if ($user->balance < $request->get('amount')) {
+            return back()->with(['error' => 'Insufficient funds'])->withInput($request->all());
+        }
         try {
             // Start database transaction
             DB::beginTransaction();
