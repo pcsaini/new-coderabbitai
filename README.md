@@ -12,7 +12,7 @@
 `Small Banking Application` is a Banking Application Assignment with some Features like deposit, withdraw and transfer amount.
 
 ## Installation & Configuration
-To set up and run the project please follow the below steps
+To set up and run the project, please follow the below steps
 ```shell
 # Clone the project repo
 git clone https://github.com/pcsaini/small-banking-application.git
