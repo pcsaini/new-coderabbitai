@@ -158,6 +158,10 @@ class PaymentController extends Controller
         $user = $request->user();
         $receiver = User::where('email', $request->email)->first();
 
+        if ($user->balance < $request->get('amount')) {
+            return back()->with(['error' => 'Insufficient funds for transfer'])->withInput($request->all());
+        }
+
         try {
             // Start database transaction
             DB::beginTransaction();
